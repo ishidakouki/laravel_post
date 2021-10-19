@@ -10,14 +10,14 @@ use App\User;
 
 class PostsController extends Controller
 {
-    public function index() {
-        $posts = Post::orderBy('created_at','desc')->paginate(10);
+    // public function index() {
+    //     $posts = Post::orderBy('created_at','desc')->paginate(10);
         
-        return view('posts.index',
-        [
-            'posts' => $posts,
-        ]);
-    }
+    //     return view('posts.index',
+    //     [
+    //         'posts' => $posts,
+    //     ]);
+    // }
 
     public function destroy($id) {
         $post = Post::findOrFail($id);
