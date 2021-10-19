@@ -10,17 +10,12 @@ use App\User;
 
 class PostsController extends Controller
 {
-    public function index(User $user, Post $posts) {
-        $user = User::findOrFail(1);
-        $posts = Post::where('user_id',$user->id)
-                 ->orderBy('created_at', 'desc')
-                 ->paginate(10);
+    public function index() {
+        $posts = Post::orderBy('created_at','desc')->paginate(10);
+        
         return view('posts.index',
         [
-            'posts' => $posts
-        ],
-        [
-            'user_name' => $user->name,
+            'posts' => $posts,
         ]);
     }
 

@@ -20,7 +20,7 @@
                 </a>
                 <a class="black-color" title="" href="">
                     <strong>
-                      {{ $user_name }}
+                      ユーザー名
                     </strong>
                 </a>
             </div>
@@ -31,17 +31,18 @@
                         @csrf
                         <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>編集</button>
                     </form>
-                    <form method="post" action="{{ route('posts.destroy', $post->id )}}">
+                    <form method="post" action="{{ route('posts.destroy', $post->id )}}" accept-charset="UTF-8">
                         @csrf
+                        <input name="_method" type="hidden" value="DELETE">
                         <button type="submit" class="btn btn-danger btn-sm" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
                     </form>
                 </div>
                 @endif
                 <h3 class="h5 title">
-                    {{ $post->title }}
+                    タイトル
                 </h3>
                 <div class="mb-5">
-                    {{ $post->text }}
+                    テキスト
                 </div>
                 <section>
                 <!-- コメント --
@@ -69,10 +70,6 @@
 </div>
 @endforeach
 
-
-<div class="pagination justify-content-center mt-5">
-    {{ $posts->links('pagination::bootstrap-4') }}
-</div>
 
 @endsection
 
