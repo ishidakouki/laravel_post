@@ -12,7 +12,9 @@
 */
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PostsController@index')->middleware('auth')->name('index');
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('auth');
 
 Route::get('signup','Auth\RegisterController@showRegistrationForm')->name('signup');
 Route::post('signup','Auth\RegisterController@register')->name('signup.post');
