@@ -12,9 +12,7 @@
 */
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth');
+Route::get('/', 'PostsController@index')->middleware('auth')->name('index');
 
 Route::get('signup','Auth\RegisterController@showRegistrationForm')->name('signup');
 Route::post('signup','Auth\RegisterController@register')->name('signup.post');
@@ -24,4 +22,4 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('users/{id}', 'UsersController@show')->middleware('auth')->name('users.show');
 
-
+Route::delete('posts/{id}', 'PostsController@destroy')->name('posts.destroy');
