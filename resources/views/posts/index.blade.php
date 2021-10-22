@@ -27,17 +27,17 @@
             </div>
             <div class="card-body">
                <div class="post_edit text-right">
-               @if (Auth::id() == $post->user_id)
-                <div class="post_edit text-right">
-                    <a class="btn btn-primary btn-sm" 
-                           href="#">
-                           <i class="far fa-edit"></i>編集
-                    </a>
-                    <a class="btn btn-danger btn-sm" rel="nofollow"
-                           href="#">
-                           <i class="far fa-trash-alt"></i>削除
-                    </a>
-                </div>
+                @if (Auth::id() == $post->user_id)
+                  <div class="post_edit text-right">
+                      <a class="btn btn-primary btn-sm" 
+                             href="#">
+                             <i class="far fa-edit"></i>編集
+                      </a>
+                      <a class="btn btn-danger btn-sm" rel="nofollow"
+                             href="#">
+                             <i class="far fa-trash-alt"></i>削除
+                      </a>
+                  </div>
                 @endif
                 
                 <h3 class="h5 title">
@@ -48,9 +48,9 @@
                     {{ $post->text}}
                 </div>
                 <section>
-                <!-- コメント --
+                <!-- コメント -->
                 <div id="comment-post-1">
-                    <!-- コメントをここに挿入 -->
+                    <-- コメントをここに挿入 -->
                         <div class="m-4">
                             <form class="w-100" action="" method="post">
                                 {{ csrf_field() }}
@@ -63,14 +63,13 @@
                                         <input type="submit" value="&#xf075;コメント送信" class="far fa-comment btn btn-default btn-sm">
                                         </input>
                                     </div>
-                                </form>
-                            </div>
+                            </form>
                         </div>
-                    </div>
                 </div>
             </div>
-
         </div>
-    @endforeach
+    </div>
+</div>
+@endforeach
 
-    @endsection
+@endsection
