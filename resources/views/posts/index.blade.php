@@ -10,13 +10,12 @@
   @include('commons.error_messages')
 </div>
 
-@foreach($posts as $post)
-
+@foreach ($posts as $post)
 <div class="col-md-8 col-md-2 mx-auto">
     <div class="card-wrap">
-        <div class="card mt-3 ">
+        <div class="card mt-3">
             <div class="card-header align-items-center d-flex">
-                <a class="no-text-decoration" href="">
+                <a class="no-text-decoration" href="{{ route('users.show', $post->user_id) }}">
                     <i class="fas fa-user-circle fa-2x mr-1"></i>
                 </a>
                 <a class="black-color" title="" href="">
@@ -66,6 +65,7 @@
                             </form>
                         </div>
                 </div>
+                </section>
             </div>
         </div>
     </div>
@@ -73,3 +73,4 @@
 @endforeach
 
 @endsection
+

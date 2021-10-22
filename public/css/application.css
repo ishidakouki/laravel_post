@@ -1,7 +1,7 @@
 body {
     background-color: #fff;
     color: #636b6f;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 200;
     height: 100vh;
     margin: 0;
@@ -33,7 +33,7 @@ body {
     padding: 0 25px;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -41,7 +41,15 @@ body {
     margin-bottom: 30px;
 }
 
-.form-group{
+.form-group {
     margin-top: 0px;
     margin-bottom: 5px;
+}
+
+.post_edit {
+    text-align: right;
+}
+
+.edit_button {
+    display: inline-block;
 }
