@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 
 use App\User;
 use App\Post;
@@ -17,7 +16,7 @@ class PostsController extends Controller
     }
 
 }
-=======
+
 use Illuminate\Support\Facades\Auth;
 
 use App\Post;
@@ -42,6 +41,3 @@ class PostsController extends Controller
         return back();
     }
 }
-
-
->>>>>>> develop_8th
