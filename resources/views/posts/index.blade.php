@@ -25,29 +25,30 @@
                 </a>
             </div>
             <div class="card-body">
+               <div class="post_edit text-right">
                 @if (Auth::id() == $post->user_id)
-                <div class="post_edit">
-                    <form class="edit_button" method="post" action="#">
-                        @csrf
-                        <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>編集</button>
-                    </form>
-                    <form class="edit_button" method="post" action="{{ route('posts.destroy', $post->id )}}" accept-charset="UTF-8">
-                        @csrf
-                        <input name="_method" type="hidden" value="DELETE">
-                        <button type="submit" class="btn btn-danger btn-sm" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
-                    </form>
-                </div>
+                  <div class="post_edit text-right">
+                      <a class="btn btn-primary btn-sm" 
+                             href="#">
+                             <i class="far fa-edit"></i>編集
+                      </a>
+                      <a class="btn btn-danger btn-sm" rel="nofollow"
+                             href="#">
+                             <i class="far fa-trash-alt"></i>削除
+                      </a>
+                  </div>
                 @endif
+                
                 <h3 class="h5 title">
-                    タイトル
+                    {{ $post->title }}
                 </h3>
+                
                 <div class="mb-5">
-                    テキスト
+                    {{ $post->text}}
                 </div>
                 <section>
-                <!-- コメント --
+                <!-- コメント -->
                 <div id="comment-post-1">
-                        コメントをここに挿入 -->
                         <div class="m-4">
                             <form class="w-100" action="" method="post">
                                 {{ csrf_field() }}
@@ -62,14 +63,14 @@
                                     </div>
                             </form>
                         </div>
-                <!-- </div> -->
+                </div>
                 </section>
+               </div>
             </div>
         </div>
     </div>
 </div>
 @endforeach
-
 
 @endsection
 
