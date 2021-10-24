@@ -49,7 +49,6 @@
                 <section>
                 <!-- コメント -->
                 <div id="comment-post-1">
-                    <-- コメントをここに挿入 -->
                         <div class="m-4">
                             <form class="w-100" action="" method="post">
                                 {{ csrf_field() }}
