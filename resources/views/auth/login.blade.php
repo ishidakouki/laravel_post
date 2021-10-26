@@ -20,9 +20,9 @@
                　   {!! Form::submit('ログインする',['class' => 'btn btn-danger w-auto']) !!}
            　   </div>
       　    {!! Form::close() !!}
-            
+
             <p class="devise-link text-center mb-2">アカウントをお持ちでないですか？{!! link_to_route('signup', '新規登録する') !!}</p>
-        </div>   
+        </div>
     </div>
 </div>>
 
