@@ -39,11 +39,11 @@
                   </div>
                 @endif
                 
-                <h3 class="h5 title">
+                <h3 class="h5 title text-left">
                     {{ $post->title }}
                 </h3>
                 
-                <div class="mb-5">
+                <div class="mb-5 text-left">
                     {{ $post->text}}
                 </div>
                 <section>
@@ -51,7 +51,7 @@
                 <div id="comment-post-1">
                         <div class="m-4">
                             <form class="w-100" action="" method="post">
-                                {{ csrf_field() }}
+                                @csrf
                                     <input name="utf8" type="hidden" value=""/>
                                     <input value="" type="hidden" name="user_id" />
                                     <input value="" type="hidden" name="post_id" />

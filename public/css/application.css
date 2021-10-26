@@ -1,55 +1,93 @@
-body {
-    background-color: #fff;
-    color: #636b6f;
-    font-family: "Nunito", sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
-}
-.full-height {
-    height: 100vh;
-}
-.flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.position-ref {
-    position: relative;
-}
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-}
-.content {
-    text-align: center;
-}
-.title {
-    font-size: 1.25rem;
-}
-.links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.m-b-md {
-    margin-bottom: 30px;
-}
+body { 
 
-.form-group {
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-
-.post_edit {
-    text-align: right;
-}
-
-.edit_button {
-    display: inline-block;
-}
+    background-color: #fafafa; 
+    font-size: 14px; 
+    color: #262626; 
+  } 
+  .top-page { 
+    max-width: 960px; 
+    margin: 0 auto; 
+    width: 90%; 
+    padding: 100px 75px 100px; 
+    display: block; 
+    flex: 1; 
+    flex-basis: auto; 
+    box-sizing: border-box; 
+  } 
+  .devise-card { 
+    border: none; 
+  } 
+  .form-wrap { 
+    max-width: 400px; 
+    width: 100%; 
+    margin: 50px auto; 
+  } 
+  .form-control { 
+    border: 1px solid #dcdfe6; 
+    font-size: inherit; 
+  } 
+  .devise-link { 
+    text-align: center; 
+    margin: 16px 0; 
+  } 
+  #wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+  } 
+  footer { 
+    margin-top: auto; 
+  } 
+  @media screen and (max-width: 768px) { 
+    .main { 
+      padding: 75px 0; 
+    } 
+    .devise-card { 
+      background-color: #fafafa; 
+    } 
+  }
+  .profile-wrap { 
+    margin: 40px 0px; 
+  } 
+  .profile-form-wrap { 
+    background: #fff; 
+    padding: 20px; 
+    border: 1px solid #e6e6e6; 
+  } 
+  .edit-profile-wrapper { 
+    margin-top: 60px; 
+  } 
+  .post-profile-icon { 
+    height: 40px; 
+    width: 40px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+  } 
+  .card-wrap { 
+    margin: 40px 0px; 
+  } 
+  .no-text-decoration:hover { 
+    text-decoration: none; 
+  } 
+  .black-color { 
+    color: #262626; 
+  } 
+  .parts { 
+    margin: 12px 0; 
+  } 
+  .post-time { 
+    margin: 0; 
+    color: #999; 
+    font-size: 10px; 
+  } 
+  .post-sub-text { 
+    text-decoration: none; 
+    color: #262626; 
+  } 
+  .delete-comment { 
+    width: 11px; 
+    height: 11px; 
+    float: right; 
+    margin: 5px 0 0 10px; 
+    background-size: 11px !important; 
+  } 
