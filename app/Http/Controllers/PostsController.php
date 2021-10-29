@@ -29,4 +29,20 @@ class PostsController extends Controller
 
         return redirect()->route('index');
     }
+    public function edit(Post $post,$id)
+    {
+        $post = Post::findOrFail($id);
+        
+        return view('posts.edit', compact('post'));
+    }
+    public function update(PostRequest $request, $id)
+    {
+        $post = Post::findOrFail($id);
+        $post->user_id = \Auth::id();
+        $post->title = $request->title;
+        $post->text = $request->text;
+        $post->save();
+
+        return redirect()->route('index');
+    }
 }
