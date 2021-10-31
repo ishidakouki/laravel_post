@@ -15,10 +15,10 @@
     <div class="card-wrap">
         <div class="card mt-3">
             <div class="card-header align-items-center d-flex">
-                <a class="no-text-decoration" href="{{ route('users.show', $post->user_id) }}">
+                <a class="no-text-decoration" href="">
                     <i class="fas fa-user-circle fa-2x mr-1"></i>
                 </a>
-                <a class="black-color" title="" href="{{ route('users.show',$post->user_id) }}">
+                <a class="black-color" title="" href="{{ route('users.show', $post->user_id) }}">
                     <strong>
                       {{ $post->user->name }}
                     </strong>
