@@ -7,18 +7,19 @@
         <div class="col-md-8 mx-auto">
            エラー表示部分
             <div class="profile-form-wrap">
-                <form class="edit_user" enctype="multipart/form-data" action="/users/update" accept-charset="UTF-8" method="post">
+                <form class="edit_user" enctype="multipart/form-data" action="{{ route('users.update',$user->id) }}" accept-charset="UTF-8" method="post">
                     <input name="utf8" type="hidden" value="&#x2713;" />
                     <input type="hidden" name="id" value="" />
                     {{csrf_field()}}
+                    @method('POST')
                         <div class="form-group">
                             <label for="name">ユーザー名</label>
-                                <input autofocus="autofocus" class="form-control" value="{{ $user->name }}" name="name" />
+                                <input autofocus="autofocus" class="form-control" value="{{ $users->name }}" name="name" />
                         </div>
 
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
-                                <input autofocus="autofocus" class="form-control" value="{{ $user-> email }}" name="email" />
+                                <input autofocus="autofocus" class="form-control" value="{{ $users->email }}" name="email" />
                         </div>
 
                         <div class="form-group">

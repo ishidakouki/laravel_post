@@ -23,5 +23,5 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('users/{id}', 'UsersController@show')->middleware('auth')->name('users.show');
-Route::get('edit/{id}', 'UsersController@edit')->name('users.edit');
-Route::put('edit/{id}', 'UsersController@update')->name('users.update');
+Route::get('users/{id}/edit', 'UsersController@edit')->name('users.edit');
+Route::post('users/{id}', 'UsersController@update')->name('users.update');
