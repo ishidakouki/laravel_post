@@ -29,7 +29,7 @@
                 @if (Auth::id() == $post->user_id)
                   <div class="post_edit text-right">
                      <a class="btn btn-primary btn-sm" 
-                            href="{{ route('posts.edit', $post->id ) }}">
+                            href="{{ route('posts.edit', $post->id) }}">
                             <i class="far fa-edit"></i>編集
                      </a>
                      <a class="btn btn-danger btn-sm" rel="nofollow"
