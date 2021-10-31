@@ -18,7 +18,7 @@
                 <a class="no-text-decoration" href="{{ route('users.show', $post->user_id) }}">
                     <i class="fas fa-user-circle fa-2x mr-1"></i>
                 </a>
-                <a class="black-color" title="" href="">
+                <a class="black-color" title="" href="{{ route('users.show',$post->user_id) }}">
                     <strong>
                       {{ $post->user->name }}
                     </strong>
