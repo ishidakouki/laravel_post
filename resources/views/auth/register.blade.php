@@ -9,7 +9,6 @@
             　　<h2 class="logo-img mx-auto mt-5">新規登録</h2>
             </div>
       　　{!! Form::open(['route' => 'signup.post']) !!}
-            @csrf
             <div class="form-group col-mb-5">
               <div class="form col-mb-5 ">
                　 {!! Form::email('email', old('email'), ['class' => 'form-control','placeholder' => 'メールアドレス']) !!}
