@@ -27,7 +27,7 @@ class UsersRequest extends FormRequest
             'name'=>'required|string|max:255',
             'email'=>'required|string|email|max:255',
             'password'=>'sometimes|required|nullable|string|min:8|confirmed',
-            'password_confirmation'=>'sometimes|required|nullable|string|min:8|confirmed'
+            'password_confirmation'=>'sometimes|required|nullable|string|min:8'
         ];
     }
 }
