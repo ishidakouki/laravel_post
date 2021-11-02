@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace App\Http\Controllers;
 
 use App\User;
@@ -20,7 +20,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         return view('users.edit',compact('user'));
     }
-    public function update(UsersRequest $request,$id)
+    public function update(Request $request,$id)
     {
         $user = User::find($id);
 
@@ -32,3 +32,4 @@ class UsersController extends Controller
         return view('users.show', compact('user'));
     }
 }
+*/
