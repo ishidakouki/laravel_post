@@ -42,7 +42,12 @@ class PostsController extends Controller
     public function update(PostRequest $request, $id)
     {
         $post = Post::findOrFail($id);
-        $post->user_id = Auth::id();
+
+        if($post->user_id === \Auth::id()) {
+            return redirect()->route('index')
+                        ->with('error', '許可されていない操作です');
+        }
+
         $post->title = $request->title;
         $post->text = $request->text;
         $post->save();
