@@ -7,6 +7,10 @@
 </div>
 
 <div class="col-md-8 col-md-2 mx-auto">
+  @if(session('error'))
+     {{ session('error') }}
+  @endif
+  
   @include('commons.error_messages')
 </div>
 
@@ -26,10 +30,6 @@
             </div>
             <div class="card-body">
                <div class="post_edit text-right">
-                @if (session('error'))
-                  <div class="error">
-                    {{ session('error')}}
-                @endif
                   </div>
 
                   <div class="post_edit text-right">
