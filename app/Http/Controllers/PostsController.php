@@ -8,6 +8,8 @@ use App\Http\Requests\PostRequest;
 use App\User;
 use App\Post;
 
+use function Ramsey\Uuid\v1;
+
 class PostsController extends Controller
 {
     public function index()
@@ -15,10 +17,12 @@ class PostsController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->get();
         return view('posts.index', ['posts' => $posts]);
     }
+
     public function create()
     {
         return view('posts.create');
     }
+
     public function store(PostRequest $request)
     {
         $post = new Post;
@@ -28,5 +32,28 @@ class PostsController extends Controller
         $post->save();
 
         return redirect()->route('index');
+    }
+
+    public function edit(Post $post,$id)
+    {
+        $post = Post::findOrFail($id);
+
+        if($post->user_id !== \Auth::id()){
+            return redirect()->route('index')
+                        ->with('error', '許可されていない操作です');
+        }
+        
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(PostRequest $request, $id)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->title = $request->title;
+        $post->text = $request->text;
+        $post->save();
+
+        return redirect()->route('index'); 
     }
 }

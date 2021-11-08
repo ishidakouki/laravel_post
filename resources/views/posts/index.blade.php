@@ -7,6 +7,10 @@
 </div>
 
 <div class="col-md-8 col-md-2 mx-auto">
+  @if(session('error'))
+     {{ session('error') }}
+  @endif
+  
   @include('commons.error_messages')
 </div>
 
@@ -15,10 +19,10 @@
     <div class="card-wrap">
         <div class="card mt-3">
             <div class="card-header align-items-center d-flex">
-                <a class="no-text-decoration" href="{{ route('users.show', $post->user_id) }}">
+                <a class="no-text-decoration" href="">
                     <i class="fas fa-user-circle fa-2x mr-1"></i>
                 </a>
-                <a class="black-color" title="" href="">
+                <a class="black-color" title="" href="{{ route('users.show', $post->user_id) }}">
                     <strong>
                       {{ $post->user->name }}
                     </strong>
@@ -26,19 +30,19 @@
             </div>
             <div class="card-body">
                <div class="post_edit text-right">
+
                 @if (Auth::id() == $post->user_id)
                   <div class="post_edit text-right">
-                      <a class="btn btn-primary btn-sm"
-                             href="#">
-                             <i class="far fa-edit"></i>編集
-                      </a>
-                      <a class="btn btn-danger btn-sm" rel="nofollow"
-                             href="#">
-                             <i class="far fa-trash-alt"></i>削除
-                      </a>
-                  </div>
+                    <a class="btn btn-primary btn-sm" 
+                           href="{{ route('posts.edit', $post->id) }}">
+                           <i class="far fa-edit"></i>編集
+                    </a>
+                    <a class="btn btn-danger btn-sm" rel="nofollow"
+                           href="#">
+                           <i class="far fa-trash-alt"></i>削除
+                    </a>
+                 </div>
                 @endif
-
                 <h3 class="h5 title text-left">
                     {{ $post->title }}
                 </h3>
