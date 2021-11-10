@@ -8,8 +8,8 @@
             <div class="text-center">
                 <i class="fas fa-user-circle fa-3x"></i>
                 <h3>
-                　{{ $user->name }}
-　　　　         </h3>
+                  {{ $user->name }}
+                </h3 class="user-show-name">
                 <div class="col-12">
                     <p>
                     {{ $user->email }}
