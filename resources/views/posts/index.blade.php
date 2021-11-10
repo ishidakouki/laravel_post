@@ -19,7 +19,7 @@
     <div class="card-wrap">
         <div class="card mt-3">
             <div class="card-header align-items-center d-flex">
-                <a class="no-text-decoration" href="">
+                <a class="no-text-decoration" href="{{ route('users.show', $post->user_id) }}">
                     <i class="fas fa-user-circle fa-2x mr-1"></i>
                 </a>
                 <a class="black-color" title="" href="{{ route('users.show', $post->user_id) }}">
@@ -38,7 +38,7 @@
                            <i class="far fa-edit"></i>編集
                     </a>
                     <a class="btn btn-danger btn-sm" rel="nofollow"
-                           href="#">
+                           href="{{ route('posts.destroy', $post->id )}}">
                            <i class="far fa-trash-alt"></i>削除
                     </a>
                  </div>
@@ -48,7 +48,7 @@
                 </h3>
 
                 <div class="mb-5 text-left">
-                    {{ $post->text}}
+                    {{ $post->text }}
                 </div>
                 <section>
                 <span class="help-block">
@@ -74,12 +74,13 @@
                 @endforeach
                 <div id="comment-post-1">
                         <div class="m-4">
-                            <form class="w-100" action="" method="post">
+                            <form class="w-100" action="{{ route('comments.store') }}" method="post">
                                 @csrf
+                                @method('POST')
                                     <input name="utf8" type="hidden" value=""/>
                                     <input value="" type="hidden" name="user_id" />
-                                    <input value="" type="hidden" name="post_id" />
-                                    <input name="" value="" class="form-control comment-input border border-light mx-auto" placeholder="コメントを入力する">
+                                    <input value="{{ $post->id }}" type="hidden" name="post_id" />
+                                    <input name="comments[{{ $post->id }}]" value="{{ old("comments.$post->id") }}" class="form-control comment-input border border-light mx-auto" placeholder="コメントを入力する">
                                     </input>
                                     <div class="text-right">
                                         <input type="submit" value="&#xf075;コメント送信" class="far fa-comment btn btn-default btn-sm">
