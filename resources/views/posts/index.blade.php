@@ -76,7 +76,6 @@
                         <div class="m-4">
                             <form class="w-100" action="{{ route('comments.store') }}" method="post">
                                 @csrf
-                                @method('POST')
                                     <input name="utf8" type="hidden" value=""/>
                                     <input value="" type="hidden" name="user_id" />
                                     <input value="{{ $post->id }}" type="hidden" name="post_id" />

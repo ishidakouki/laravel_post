@@ -4,7 +4,7 @@
 
 <div class="container mt-5">
     <div class="card">
-        <div class="form-wrap col-xs-6 col-lg-5 m-auto">
+        <div class="form-wrap col-xs-6 col-lg-4">
             <div class="form-group text-center">
             　　<h2 class="logo-img mx-auto">新規登録</h2>
             </div>
