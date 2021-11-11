@@ -58,6 +58,14 @@
                     <div class="container mt-4 text-left">
                         <div class="border-top p-1">
                             <span>
+                                @if (Auth::id() == $comment->user->id)
+                                    <div class="post_edit">
+                                        <form class="edit_button" method="get" action="{{ route('comments.edit', $comment->id ) }}">
+                                            @csrf
+                                            <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>編集</button>
+                                        </form>
+                                    </div>
+                                    @endif
                                 <strong>
                                     <a class="no-text-decoration black-color" href="{{ route('users.show', $comment->user->id ) }}">
                                     {{$comment->user->name}}
