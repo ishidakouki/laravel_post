@@ -8,7 +8,7 @@
 
 <div class="col-md-8 col-md-2 mx-auto">
   @if(session('error'))
-     {{ session('error') }}
+       <p class="alert alert-danger">{{ session('error') }}<p>
   @endif
   
   @include('commons.error_messages')
