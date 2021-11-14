@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CommentPostRequest;
 use App\Http\Requests\CommentEditRequest;
@@ -39,5 +38,20 @@ class CommentsController extends Controller
             return redirect()->route('index');
         }
         return back()->with('error', '許可されていない操作です');
-    }    
+    }   
+    
+    public function destroy($id) {
+
+        $comment = Comment::findOrFail($id);
+
+        if(Auth::id() !== $comment->user->id){
+            return redirect()->route('index')
+                        ->with('error', '許可されていない操作です');
+        }
+        
+        $comment -> delete();
+        return redirect()->route('index');
+    
+    }
+
 }
