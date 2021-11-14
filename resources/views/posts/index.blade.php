@@ -31,6 +31,7 @@
             <div class="card-body">
                <div class="post_edit text-right">
                 @if (Auth::id() == $post->user_id)
+
                   <div class="post_edit text-right">
                     <a class="btn btn-primary btn-sm" 
                            href="{{ route('posts.edit', $post->id) }}">
@@ -41,6 +42,7 @@
                            <i class="far fa-trash-alt"></i>削除
                     </a>
                  </div>
+                 
                 @endif
                 <h3 class="h5 title text-left">
                     {{ $post->title }}
@@ -51,11 +53,11 @@
                 </div>
                 <section>
                 <span class="help-block">
-                <!-- エラー表示位置 -->
+                @include('commons.error_messages')
                 </span>
                 @foreach($post->comments as $comment)
                     <div class="container mt-4 text-left">
-                        <div class="border-top p-1">
+                        <div class="border-top p-1">    
                             <span>
                                 @if (Auth::id() == $comment->user->id)
                                     <div class="post_edit">

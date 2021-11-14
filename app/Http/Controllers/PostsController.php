@@ -8,8 +8,6 @@ use App\Http\Requests\PostRequest;
 use App\User;
 use App\Post;
 
-use function Ramsey\Uuid\v1;
-
 class PostsController extends Controller
 {
     public function index()
