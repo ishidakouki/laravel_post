@@ -30,7 +30,6 @@
             </div>
             <div class="card-body">
                <div class="post_edit text-right">
-
                 @if (Auth::id() == $post->user_id)
                   <div class="post_edit text-right">
                     <a class="btn btn-primary btn-sm" 
