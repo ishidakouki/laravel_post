@@ -30,8 +30,8 @@
             </div>
             <div class="card-body">
                <div class="post_edit text-right">
+                @if (Auth::id() == $post->user_id)
 
-                
                   <div class="post_edit text-right">
                     <a class="btn btn-primary btn-sm" 
                            href="{{ route('posts.edit', $post->id) }}">
@@ -42,7 +42,8 @@
                            <i class="far fa-trash-alt"></i>削除
                     </a>
                  </div>
-                
+                 
+                @endif
                 <h3 class="h5 title text-left">
                     {{ $post->title }}
                 </h3>
