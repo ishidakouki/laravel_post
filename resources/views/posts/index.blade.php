@@ -64,6 +64,11 @@
                                             @csrf
                                             <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>編集</button>
                                         </form>
+                                        <form class="edit_button" method="post" action="{{ route('comments.destroy', $comment->id )}}" accept-charset="UTF-8">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
+                                        </form>
                                     </div>
                                     @endif
                                 <strong>
