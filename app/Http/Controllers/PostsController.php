@@ -47,22 +47,27 @@ class PostsController extends Controller
     public function update(PostRequest $request, $id)
     {
         $post = Post::findOrFail($id);
+        
+        if(Auth::id() == $post->user_id)
+        {
+            $post->title = $request->title;
+            $post->text = $request->text;
+            $post->save();
 
-        $post->title = $request->title;
-        $post->text = $request->text;
-        $post->save();
-
-        return redirect()->route('index'); 
+            return redirect()->route('index'); 
+        }
+        return redirect()->route('index')->with('error', '許可されていない操作です');
     }
 
-    public function destroy($id) {
+    public function destroy($id) 
+    {
         $post = Post::findOrFail($id);
+
         if(Auth::id() == $post->user_id){
             $post -> delete();
 
             return redirect()->route('index');
         }
-        
-        return back()->with('error', '許可されていない操作です');
+        return redirect()->route('index')->with('error', '許可されていない操作です');
     }
 }
