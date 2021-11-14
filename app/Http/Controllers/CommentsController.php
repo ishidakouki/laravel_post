@@ -38,6 +38,18 @@ class CommentsController extends Controller
 
             return redirect()->route('index');
         }
-        return back()->with('error', '許可されていない操作です');
+        return redirect()->route('index')->with('error', '許可されていない操作です');
     }    
+
+    public function destroy($id) {
+        $comment = Comment::findOrFail($id);
+
+        if(Auth::id() == $comment->user->id){
+            $comment -> delete();
+
+            return redirect()->route('index');
+        }
+        
+        return redirect()->route('index')->with('error', '許可されていない操作です');
+    }
 }
