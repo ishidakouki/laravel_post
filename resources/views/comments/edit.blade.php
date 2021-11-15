@@ -18,7 +18,7 @@
                             <input name="comments" class="form-control" placeholder="コメント" value="{{ old('comments') ?? $comment->comment }}"/>
                         </div>
                         <div class="text-center">
-                            <input type="submit" name="commit" value="更新する" class="btn btn-primary w-25" data-disable-with="更新する"/>
+                            <input type="submit" name="commit" value="更新する" class="btn btn-store btn-primary w-25" data-disable-with="更新する"/>
                         </div>
                     </form>
                 </div>
