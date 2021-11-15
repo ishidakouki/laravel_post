@@ -33,11 +33,11 @@
                 @if (Auth::id() == $post->user_id)
 
                   <div class="post_edit text-right">
-                    <a class="btn btn-primary btn-sm" 
+                    <a class="btn btn-size btn-primary" 
                            href="{{ route('posts.edit', $post->id) }}">
                            <i class="far fa-edit"></i>編集
                     </a>
-                    <a class="btn btn-danger btn-sm" rel="nofollow"
+                    <a class="btn btn-size btn-danger" rel="nofollow"
                            href="{{ route('posts.destroy', $post->id )}}">
                            <i class="far fa-trash-alt"></i>削除
                     </a>
@@ -63,12 +63,12 @@
                                     <div class="post_edit">
                                         <form class="edit_button" method="get" action="{{ route('comments.edit', $comment->id ) }}">
                                             @csrf
-                                            <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>編集</button>
+                                            <button class="btn btn-size btn-primary"><i class="far fa-edit"></i>編集</button>
                                         </form>
                                         <form class="edit_button" method="post" action="{{ route('comments.destroy', $comment->id )}}" accept-charset="UTF-8">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
+                                            <button type="submit" class="btn btn-size btn-danger" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
                                         </form>
                                     </div>
                                     @endif
