@@ -13,7 +13,7 @@ body {
     flex-basis: auto;
     box-sizing: border-box;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
     .display-4 {
         font-size: 2rem;
     }
@@ -80,7 +80,7 @@ body {
 footer {
     margin-top: auto;
 }
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 415px) {
     .btn-size {
         font-size: 8px;
         padding-top: 7px;
