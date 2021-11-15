@@ -13,6 +13,41 @@ body {
     flex-basis: auto;
     box-sizing: border-box;
 }
+@media screen and (max-width: 375px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 0.8rem;
+        line-height: inherit;
+        white-space: nowwrap;
+    }
+    .navbar {
+        display: flex;
+    }
+    .navbar-expand .navbar-collapse {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .btn-info {
+        font-size: 1px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .btn-size {
+        font-size: 1px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
 .devise-card {
     border: none;
 }
@@ -45,6 +80,22 @@ body {
 footer {
     margin-top: auto;
 }
+@media screen and (min-width: 375px) {
+    .btn-size {
+        font-size: 8px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .navbar {
+        display: flex;
+    }
+    .navbar-expand .navbar-collapse {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
 @media screen and (max-width: 768px) {
     .main {
         padding: 75px 0;
@@ -53,6 +104,7 @@ footer {
         background-color: #fafafa;
     }
 }
+
 .profile-wrap {
     margin: 40px 0px;
 }
@@ -104,6 +156,7 @@ footer {
 .edit_button {
     display: inline-block;
 }
+
 .user-show-name {
     text-align: center;
 }
