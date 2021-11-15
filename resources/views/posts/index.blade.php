@@ -29,20 +29,18 @@
                 </a>
             </div>
             <div class="card-body">
-               <div class="post_edit text-right">
+                <div class="post_edit text-right">
                 @if (Auth::id() == $post->user_id)
 
-                  <div class="post_edit text-right">
-                    <a class="btn btn-size btn-primary" 
-                           href="{{ route('posts.edit', $post->id) }}">
-                           <i class="far fa-edit"></i>編集
-                    </a>
-                    <a class="btn btn-size btn-danger" rel="nofollow"
-                           href="{{ route('posts.destroy', $post->id )}}">
-                           <i class="far fa-trash-alt"></i>削除
-                    </a>
-                 </div>
-                 
+                <form class="edit_button" method="get" action="{{ route('posts.edit', $post->id ) }}">
+                    @csrf
+                    <button class="btn btn-size btn-primary"><i class="far fa-edit"></i>編集</button>
+                </form>
+                <form class="edit_button" method="post" action="{{ route('posts.destroy', $post->id )}}" accept-charset="UTF-8">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-size btn-danger" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
+                </form> 
                 @endif
                 <h3 class="h5 title text-left">
                     {{ $post->title }}
