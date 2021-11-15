@@ -52,9 +52,9 @@
                     {{ $post->text }}
                 </div>
                 <section>
-                <span class="help-block">
+                {{-- <span class="help-block">
                 @include('commons.error_messages')
-                </span>
+                </span> --}}
                 @foreach($post->comments as $comment)
                     <div class="container mt-4 text-left">
                         <div class="border-top p-1">    
