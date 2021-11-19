@@ -99,7 +99,7 @@
                                     </div>
                             </form>
                         </div>
-                    </div>
+                </div>
                 </section>
                </div>
             </div>
