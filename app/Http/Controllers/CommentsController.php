@@ -20,7 +20,7 @@ class CommentsController extends Controller
         $comment->comment = $request->comments[$request->post_id];
         $comment->save();
 
-        return redirect()->route('index'); 
+        return redirect()->route('index');
     }
 
     public function edit($id) {
@@ -30,7 +30,7 @@ class CommentsController extends Controller
 
     public function update(CommentEditRequest $request, $id) {
         $comment = Comment::findOrFail($id);
-        
+
         if(Auth::id() == $comment->user->id){
             $comment->comment = $request->comments;
             $comment->save();
@@ -40,8 +40,8 @@ class CommentsController extends Controller
 
         return redirect()->route('index')
                     ->with('error', '許可されていない操作です');
-    }   
-    
+    }
+
     public function destroy($id) {
 
         $comment = Comment::findOrFail($id);
@@ -50,10 +50,9 @@ class CommentsController extends Controller
             return redirect()->route('index')
                         ->with('error', '許可されていない操作です');
         }
-        
+
         $comment -> delete();
         return redirect()->route('index');
-    
+
     }
 }
-
