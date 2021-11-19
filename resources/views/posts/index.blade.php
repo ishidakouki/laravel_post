@@ -10,7 +10,7 @@
   @if(session('error'))
        <p class="alert alert-danger">{{ session('error') }}<p>
   @endif
-  
+
   @include('commons.error_messages')
 </div>
 
@@ -40,7 +40,7 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-size btn-danger" rel="nofollow" ><i class="far fa-trash-alt"></i>削除</button>
-                </form> 
+                </form>
                 @endif
                 <h3 class="h5 title text-left">
                     {{ $post->title }}
@@ -55,7 +55,7 @@
                 </span> --}}
                 @foreach($post->comments as $comment)
                     <div class="container mt-4 text-left">
-                        <div class="border-top p-1">    
+                        <div class="border-top p-1">
                             <span>
                                 @if (Auth::id() == $comment->user->id)
                                     <div class="post_edit">
